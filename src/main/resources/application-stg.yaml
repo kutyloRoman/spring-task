@@ -1,0 +1,18 @@
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+  datasource:
+    url: "jdbc:mysql:://localhost:3306/exampledb"
+    username: test
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  flyway:
+    url: "jdbc:mysql:://localhost:3306/exampledb"
+    baseline-on-migrate: true
+    user: test
+    password: 123456

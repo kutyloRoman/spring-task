@@ -1,0 +1,18 @@
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url: "jdbc:postgresql:://localhost:5432/exampledb"
+    username: test
+    password: 123456
+    driver-class-name: org.postgreqsl.Driver
+  flyway:
+    url: "jdbc:postgresql:://localhost:5432/exampledb"
+    baseline-on-migrate: true
+    user: test
+    password: 123456
