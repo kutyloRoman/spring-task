@@ -11,7 +11,6 @@ spring:
     driver-class-name: org.h2.Driver
     username: sa
     password: sa
-    schema: classpath:/static/schema.sql
   h2:
     console:
       enabled: true
@@ -22,16 +21,32 @@ spring:
     password: sa
 
 management:
+  security:
+    enabled: true
   endpoints:
-    enabled-by-default: true
+    enabled-by-default: false
+    health:
+      sensitive: false
     web:
       exposure:
-        include: "custom"
+        include: "test,prometheus,health,info,metrics"
   endpoint:
+    shutdown:
+      enabled: true
+    health:
+      enabled: true
+      show-details: "ALWAYS"
     info:
       enabled: true
-    custom:
+    metrics:
       enabled: true
+    prometheus:
+      enabled: true
+
+jwt:
+  token:
+    secret: testObj
+    expired: 3600000
 
 app:
   message: "Dev profile"

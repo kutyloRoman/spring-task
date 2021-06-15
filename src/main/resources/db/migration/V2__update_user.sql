@@ -1,0 +1,8 @@
+DELETE FROM user
+WHERE id = 1;
+
+DELETE FROM user
+WHERE id = 2;
+
+ALTER TABLE user
+ADD is_admin BOOLEAN;

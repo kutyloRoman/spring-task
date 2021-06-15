@@ -41,16 +41,6 @@ public class UserController {
     return userService.getUserById(id);
   }
 
-  @ResponseStatus(HttpStatus.CREATED)
-  @RequestMapping(
-      method = RequestMethod.POST,
-      produces = MediaType.APPLICATION_JSON_VALUE,
-      consumes = MediaType.APPLICATION_JSON_VALUE
-  )
-  UserResponse save(@RequestBody UserRequest userRequest) {
-    return userService.save(userRequest);
-  }
-
   @RequestMapping(
       value = "/{id}",
       method = RequestMethod.PUT,
